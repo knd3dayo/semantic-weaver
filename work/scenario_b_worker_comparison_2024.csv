@@ -1,0 +1,3 @@
+﻿canonical_concept,physical_term,source_statistics,stats_data_id,year,industry,geography,value,unit,derivation,definition,directly_comparable
+働く人,従業者,令和6年経済センサス-基礎調査,0004040102,2024,情報通信業,東京都,1211736,人,API取得値（表章項目: 従業者数）,事業所で働く従業者。雇用者のいない個人経営事業所を除く。,no
+働く人,役員及び従業員,法人企業統計調査,0003060791,2024,情報通信業,全国,2355084,人,期中平均役員数 + 期中平均従業員数,金融業・保険業以外の情報通信業、全規模における期中平均の役員数と従業員数の合計。,no

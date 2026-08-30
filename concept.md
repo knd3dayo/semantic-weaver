@@ -59,13 +59,25 @@ DuckDBの COMMENT ON TABLE と COMMENT ON COLUMN を活用し、各テーブル�
 
 企業データの代わりに、縦割り行政によって「言葉の定義のズレ」が大量に存在する政府統計のオープンデータを活用し、ツールの「同名異義語の分離」と「シノニムの統合」能力を検証する。
 
-### 3.1 検証シナリオ A：同名異義語（Equivocation）の検知とメタデータ根拠の対話
+### 3.1 検証シナリオ A：同名異義語（Equivocation）の検知とコード値に関するメタデータ
 
 同じ「人口」という言葉でも、定義が異なるデータが存在することを、メタデータ検索とSQL生成の前段で検出できるかを検証する。
 
 * **使用データ:**
-* 総務省『国勢調査』の人口（実態ベース：`常住人口`）
-* 総務省『住民基本台帳』の人口（手続ベース：`登録人口`）
+* 国勢調査ベースの人口データ
+  * e-Stat 統計表ID: 00200524
+  * [令和７年国勢調査 速報集計 人口速報集計　（男女別人口及び世帯総数）](https://www.e-stat.go.jp/statistics/00200524)
+  * [人口推計](https://www.stat.go.jp/data/jinsui/1.html#sakusei)
+
+* 住民基本台帳ベースの人口データ
+  * e-Stat 統計表ID: 00200241 系（住民基本台帳に基づく人口、人口動態及び世帯数調査）
+  * [住民基本台帳に基づく人口、人口動態及び世帯数調査](https://www.e-stat.go.jp/stat-search/files?page=1&layout=normal&toukei=00200241&tstat=000001039591&metadata=1&data=1)
+  * [説明資料](https://www.soumu.go.jp/main_content/000892926.pdf)
+
+* 国勢調査ベース人口と住民基本台帳ベース人口の混在データ
+  * [社会・人口統計体系](https://www.e-stat.go.jp/stat-search/database?page=1&layout=datalist&toukei=00200502&tstat=000001111375&cycle=8&tclass1=000001111377&result_page=1&tclass2val=0)
+  *[説明資料](https://www.stat.go.jp/data/ssds/1.html)
+
 
 * **PoCのタスク:** エージェントに「A市の人口推移を出して」と指示する。
 * **成功基準（期待される挙動）:**
